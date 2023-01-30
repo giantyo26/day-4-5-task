@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <title>Contact form</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="nav-bar">
+        <a class="nav-logo" href="index.html"><img class="logo" src="assets/img/brandwhite.png" alt="logo" /></a>
+
+        <ul>
+            <a class="nav-home" href="index.html">Home</a>
+            <a class="nav-project" href="project.html">My Project</a>
+        </ul>
+
+        <a id="contact-me" href="contact-me.html">Contact Me</a>
+    </nav>
+    <!-- end navbar -->
+    <h1>Get in touch</h1>
+    <!-- contact form -->
+    <div id="form-container">
+        <!-- form container -->
+        <form id="contact-form">
+            <div>
+                <label for="name" class="label">Name</label>
+                <input type="text" id="name" class="form-input" />
+            </div>
+
+            <div>
+                <label for="email" class="label">Email</label>
+                <input type="text" id="email" class="form-input" />
+            </div>
+
+            <div>
+                <label for="phone" class="label">Phone Number</label>
+                <input type="tel" id="phone" class="form-input" />
+            </div>
+
+            <div>
+                <label for="subject" class="label">Subject</label>
+                <select id="subject" class="form-input">
+                    <option>Let's connect</option>
+                    <option>Let's collaborate</option>
+                    <option>I have a question</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="message" class="label">Message</label>
+                <textarea id="message" class="form-input"></textarea>
+            </div>
+            <div>
+                <button type="button" onclick="getData()" id="submit">Submit</button>
+            </div>
+        </form>
+        <!-- end form container -->
+    </div>
+    <!-- end contact form -->
+    <script src="assets/js/script.js"></script>
+    
+</body>
+
+</html>
+
+<body>
+
+    </html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <title>My Project</title>
+</head>
+
+<body>
+
+    <body>
+        <!-- navbar -->
+        <nav class="nav-bar">
+            <a class="nav-logo" href="index.html"><img class="logo" src="assets/img/brandwhite.png" alt="logo" /></a>
+
+            <ul>
+                <a class="nav-home" href="index.html">Home</a>
+                <a class="nav-project" href="project.html">My Project</a>
+            </ul>
+
+            <a id="contact-me" href="contact-me.html">Contact Me</a>
+        </nav>
+        <!-- end navbar -->
+        <h1>Add a project</h1>
+
+        <!-- Project Form -->
+        <div id="form-container">
+            <!-- form container -->
+            <form id="project-form" onsubmit="addProject(event)">
+                <div id="name-container">
+                    <label for="project-name" class="label">Project Name</label>
+                    <input type="text" id="project-name  " class="form-input" />
+                </div>
+
+                <div id="date-container">
+                    <div>
+                      <label for="start-date">Start Date</label>
+                      <input type="date" id="start-date" class="form-input">
+                    </div>
+                    <div>
+                      <label for="end-date">End Date</label>
+                      <input type="date" id="end-date" class="form-input">
+                    </div>
+                  </div>
+                
+
+                <div id="description-container">
+                    <label for="description" class="label">Description</label>
+                    <textarea id="description" class="form-input"></textarea>
+                </div>
+                <label class="label">Languages & Technologies</label>
+                <div id="technologies-container">
+                   
+                        <label class="technologies">
+                            <input id="javascript" type="checkbox"><i class="fa-brands fa-js"></i>
+                        </label>
+                        <label class="technologies">
+                            <input id="go" type="checkbox"><i class="fa-brands fa-golang"></i>
+
+                        </label>
+                        <label class="technologies">
+                            <input id="python" type="checkbox"><i class="fa-brands fa-python"></i>
+                        </label>
+
+                        <label class="technologies">
+                            <input id="react" type="checkbox"><i class="fa-brands fa-react"></i>
+                        </label> 
+                </div>
+                <label class="label">Upload an image</label>
+                <div id="thumbnail-container">
+                    <input id="thumbnail" type="file"><i class="fa-solid fa-paperclip"></i>
+                </div>
+
+                <div>
+                    <button type="button" onclick="getData()" id="add-project">Submit</button>
+                </div>
+            </form>
+
+            <script src="assets/js/project.js"></script>
+        </div>
+        <div id="project-list-container">
+            <!-- dynamic content -->
+            <div id="project-list">
+                <div id="project-image">
+                  <img src= />
+                </div>
+
+                </div>
+    </body>
+    <script src="/assets/js/script.js"></script>
+
+</html>
+</body>
+
+</html>
