@@ -6,15 +6,15 @@ function getData() {
     let subject = document.getElementById("subject").value;
     let message = document.getElementById("message").value;
 
-    if(name == "") {
+    if (name == "") {
         alert("Type out your name!")
-    } else if(email == "") {
+    } else if (email == "") {
         alert("Input your email!")
-    } else if(phone == "") {
+    } else if (phone == "") {
         alert("Type your phone number!")
-    } else if(subject == "") {
+    } else if (subject == "") {
         alert("Choose the subject")
-    } else if(message == "") {
+    } else if (message == "") {
         alert("Fill out the message")
     } else {
         const defaultEmail = "giantyoard@gmail.com";
@@ -27,83 +27,99 @@ function getData() {
 
 }
 
-// add project function
+
 // global array
 const myProject = [];
-function addProject(e) {
-    e.preventDefault();
 
-    // Delaclaration Variable DOM Selection
-    let name = document.getElementById("project-name").value;
-    let startDate = new Date(document.getElementById('start-date').value);
-    let endDate = new Date(document.getElementById("end-date").value);
+// add project function
+function addProject(event) {
+    event.preventDefault();
+
+
+
+
+    // Declaration Variable DOM Selection
+    let projectName = document.getElementById("project-name").value;
+    let startDate = document.getElementById('start-date').value;
+    let endDate = document.getElementById("end-date").value;
     let description = document.getElementById("description").value;
 
-    // check technology checkbox
     let javascript = document.getElementById("javascript").checked;
     let python = document.getElementById("python").checked;
+    let c = document.getElementById("c").checked;
     let go = document.getElementById("go").checked;
-    let react = document.getElementById("react").checked; 
+    let react = document.getElementById("react").checked;
+    let postgresql = document.getElementById("postgresql").checked;
     let thumbnail = document.getElementById("thumbnail").files;
 
-    if (name == "") {
-        alert("Please Input Name");
+    if (projectName == "") {
+        alert("Please input the project name!");
     } else if (startDate == "") {
-        alert("Please Input Start Date");
+        alert("Input the start date of your project!");
     } else if (endDate == "") {
-        alert("Please Input End Date");
+        alert("Input the end date of your project!");
     } else if (description == "") {
-        alert("Please Input Description");
-    } else if (!javascript && !go && !python && !react) {
-        alert("Please Checklist Technologies");
+        alert("Fill out the project description!");
+    } else if (!javascript && !python && !go && !react && !postgresql) {
+        alert("Check the technologies you use for the project!");
     } else if (thumbnail.length == 0) {
-        alert("Please Input Image");
+        alert("Upload the thumbnail")
     } else {
         // Convert image to blob object
         thumbnail = URL.createObjectURL(thumbnail[0]);
+        
+        // Duration (endDate - startDate)
+        // let duration = ;
 
-
-        let myProjectData = {
-            name,
+        let projectProperties = {
+            projectName,
             startDate,
             endDate,
+            // duration,
             description,
-            javascript,
-            python,
-            go,
-            react,
+            technologies: {
+                javascript,
+                go,
+                python,
+                c,
+                react,
+                postgresql,
+            },
             thumbnail
         };
 
-        myProject.push(myProjectData);
-        console.log(myProject)
-        showProject();
+        myProject.push(projectProperties);
+
+        renderProject();
+
     }
 
-}
-// function to show list Myprojects
-function showProject() {
-    document.getElementById("project-list").innerHTML = "";
-    console.log(myProject.length)
-    for (let i = 0; i < myProject.length; i++) {
-        document.getElementById("project-list").innerHTML += `
-        <div id="project-list">
-        <img src="${myProject.thumbnail}"/>
-            <a href="/assets/js/project-detail.html"><h2>${myProject.projectName}</h2></a>
-            <div>Durasi: ${project.duration} bulan</div>
-      <p>
-        ${myProject.description}
-      </p>
-      <div>
-        ${myProject.javascript  ? `<i class="fa-brands fa-js"></i>` : ""}
-        ${myProject.go ? `<i class="fa-brands fa-golang"></i>` : ""}
-        ${myProjec.python  ? `<i class="fa-brands fa-python"></i>` : ""}
-        ${myProject.react  ? `<i class="fa-brands fa-react"></i>` : ""}
-      </div>
-      <div>
-        <button>edit</button>
-        <button>delete</button>
-      </div>
-    </div>`;
+
+    // function to show list Myprojects
+    function renderProject() {
+        document.getElementById("projects-list").innerHTML;
+        for (let i = 0; i < myProject.length; i++) {
+        document.getElementById("projects-list").innerHTML += `
+        <a href="project-detail.html">
+        <div id="project-card">
+                <img src="${myProject[i].thumbnail}"/>
+            <a id="project-title" href="/project-detail.html"><h2>${myProject[i].projectName}</h2></a>
+            <div> Durasi: ${myProject[i.duration]} minggu</div
+                <p>${myProject[i].description}</p>
+            <div id = "technologies-icon">
+                ${myProject[i].technologies.javascript ? `<i class="devicon-javascript-plain colored"></i>` : ""}
+                ${myProject[i].technologies.go ? `<i class="devicon-go-original-wordmark colored"></i>` : ""}
+                ${myProject[i].technologies.python ? `<i class="devicon-python-plain-wordmark colored"></i>` : ""}
+                ${myProject[i].technologies.c ? `<i class="devicon-c-plain-wordmark colored"></i>` : ""}
+                ${myProject[i].technologies.react ? `<i class="devicon-react-original-wordmark colored"></i>` : ""}
+                ${myProject[i].technologies.postgresql ? `<i class="devicon-postgresql-plain-wordmark colored"></i>` : ""}
+            </div>
+            <div id:"project-option">
+                <button>edit</button>
+                <button>delete</button>
+            </div>
+        </div>
+        `;
+        }
     }
 }

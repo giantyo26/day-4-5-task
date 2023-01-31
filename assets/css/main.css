@@ -127,7 +127,6 @@ nav ul {
 }
 
 #card {
-    max-width: 100%;
     border-radius: 20px;
     box-shadow: 0 0 10px #dbdbdb;
     text-align: center;
@@ -136,7 +135,6 @@ nav ul {
 }
 
 #photo {
-    max-width: 100%;
     width: 350px;
     height: 400px;
     border-radius: 20px 20px 0 0;
@@ -219,16 +217,20 @@ h1 {
 
 
 #technologies-cointainer {
-    display: block;
+    display: flex;
     padding-bottom: 30px;
     
 }
 
+#technologies-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+}
 .technologies {
-    font-size: 30px;
-    margin: 0 15px;
-    align-items: center;
-   
+    display: flex;
+    font-size: 2.5vh;
+    flex-basis: 33.333333%   
 }
 
 #thumbnail-container {
@@ -258,12 +260,53 @@ input::file-selector-button {
 #add-project {
     font-size: 18px;
     cursor: pointer;
-    margin-top: 16px;
-    margin-left: 75%;
-    margin-bottom: 16px;
+    margin: 16px 0 0 81%;
     border-radius: 10px;
     color: #F5F5F5;
     padding: 5px 15px;
     background-color: #111727;
 }
 
+/* Projects Container */
+
+#projects-container {
+    background-color: #f5f5f5;
+}
+
+#projects-list {
+    display: grid;
+    padding: 1em 20em;
+
+}
+
+#project-card {
+    box-shadow: 0 4px 8px 0 #dbdbdb;
+    border-radius: 15px;
+    padding: 20px;
+
+}
+
+#project-card img {
+  border-radius: 16px;
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+
+}
+
+#project-card a {
+
+}
+
+#project-card duration {
+
+}
+
+#project-card p {
+
+}
+
+#technologies-icon {
+    font-size: 2em;
+
+}
