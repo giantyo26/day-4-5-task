@@ -1,4 +1,4 @@
-//Contact form function
+// Contact form function
 function getData() {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
@@ -27,18 +27,14 @@ function getData() {
 
 }
 
-
-// global array
+// Global array
 const myProject = [];
 
-// add project function
-function addProject(event) {
-    event.preventDefault();
+// Add project function
+function addProject(e) {
+    e.preventDefault()
 
-
-
-
-    // Declaration Variable DOM Selection
+    // Declaring selected DOM to a variable
     let projectName = document.getElementById("project-name").value;
     let startDate = document.getElementById('start-date').value;
     let endDate = document.getElementById("end-date").value;
@@ -52,6 +48,7 @@ function addProject(event) {
     let postgresql = document.getElementById("postgresql").checked;
     let thumbnail = document.getElementById("thumbnail").files;
 
+    // Conditional alert if any the field is empty
     if (projectName == "") {
         alert("Please input the project name!");
     } else if (startDate == "") {
@@ -67,7 +64,7 @@ function addProject(event) {
     } else {
         // Convert image to blob object
         thumbnail = URL.createObjectURL(thumbnail[0]);
-        
+
         // Duration (endDate - startDate)
         // let duration = ;
 
@@ -90,36 +87,86 @@ function addProject(event) {
 
         myProject.push(projectProperties);
 
-        renderProject();
-
+        showProjects();
+        
+        
     }
+}
 
-
-    // function to show list Myprojects
-    function renderProject() {
-        document.getElementById("projects-list").innerHTML;
-        for (let i = 0; i < myProject.length; i++) {
+// function to show list Myprojects
+function showProjects() {
+    let i = 0;
+    for (i of myProject) {
         document.getElementById("projects-list").innerHTML += `
         <a href="project-detail.html">
         <div id="project-card">
-                <img src="${myProject[i].thumbnail}"/>
-            <a id="project-title" href="/project-detail.html"><h2>${myProject[i].projectName}</h2></a>
-            <div> Durasi: ${myProject[i.duration]} minggu</div
-                <p>${myProject[i].description}</p>
+                <img src="${i.thumbnail}"/>
+            <a id="project-title" href="/project-detail.html"><h2>${i.projectName}</h2></a>
+            <p id="project-duration">Duration: ${myProject[i.duration]} minggu</p>
+            <p id="project-description">${i.description}</p>
+
             <div id = "technologies-icon">
-                ${myProject[i].technologies.javascript ? `<i class="devicon-javascript-plain colored"></i>` : ""}
-                ${myProject[i].technologies.go ? `<i class="devicon-go-original-wordmark colored"></i>` : ""}
-                ${myProject[i].technologies.python ? `<i class="devicon-python-plain-wordmark colored"></i>` : ""}
-                ${myProject[i].technologies.c ? `<i class="devicon-c-plain-wordmark colored"></i>` : ""}
-                ${myProject[i].technologies.react ? `<i class="devicon-react-original-wordmark colored"></i>` : ""}
-                ${myProject[i].technologies.postgresql ? `<i class="devicon-postgresql-plain-wordmark colored"></i>` : ""}
+                ${i.technologies.javascript ? `<i class="devicon-javascript-plain colored"></i>` : ""}
+                ${i.technologies.go ? `<i class="devicon-go-original-wordmark colored"></i>` : ""}
+                ${i.technologies.python ? `
+                
+            <i class="devicon-python-plain colored"></i>
+          
+              ` : ""}
+                ${i.technologies.c ? `<i class="devicon-c-plain-wordmark colored"></i>` : ""}
+                ${i.technologies.react ? `
+                <i class="devicon-react-original colored"></i>
+              ` : ""}
+                ${i.technologies.postgresql ? `
+                <i class="devicon-postgresql-plain colored"></i>
+              ` : ""}
             </div>
-            <div id:"project-option">
+            <div class:"project-option">
                 <button>edit</button>
                 <button>delete</button>
             </div>
         </div>
         `;
-        }
     }
 }
+
+
+// function createTime() {
+//     let years = time.getFullYear();
+//     let monthIndex = time.getMonth();
+//     let date = time.getDate();
+//     let hour = time.getHours();
+//     let minutes = time.getMinutes();
+
+//     const month = ["January", "February", "March", "April", "May", "June", "July", "August",
+//         "September", "October", "November", "December"];
+//     return `${date} ${month[monthIndex]} ${years} ${hour}:${minutes} `
+
+// }
+
+// const getDuration = (timePost) => {
+//     let timePosted = new Date(timePost)
+//     let timeNow = new Date()
+
+//     difference = (timeNow - timePosted);
+
+//     let monthDuration = Math.floor(difference / (30 * 24 * 60 * 60 * 1000));
+//     if (monthDuration > 0) {
+//         return `${monthDuration} month ago`
+//     } else {
+//         let weekDuration = Math.floor(difference / (30 * 24 * 60 * 60 * 1000))
+//         if (monthDuration < 0) {
+//             return `${weekDuratiom} week ago`
+//         } else {
+//             let hourDuration = Math.floor(difference / (30 * 24 * 60 * 60 * 1000))
+//             return `${hourDuration} jam lalu`
+//         } {
+
+//         }
+//     }
+
+// }
+
+
+// // setInterval()
+

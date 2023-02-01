@@ -12,100 +12,95 @@
     <title>My Project</title>
 </head>
 
+
 <body>
+    <!-- navbar -->
+    <nav class="nav-bar">
+        <a class="nav-logo" href="index.html"><img class="logo" src="assets/img/brandwhite.png" alt="logo" /></a>
 
-    <body>
-        <!-- navbar -->
-        <nav class="nav-bar">
-            <a class="nav-logo" href="index.html"><img class="logo" src="assets/img/brandwhite.png" alt="logo" /></a>
+        <ul>
+            <a class="nav-home" href="index.html">Home</a>
+            <a class="nav-project" href="project.html">My Project</a>
+        </ul>
 
-            <ul>
-                <a class="nav-home" href="index.html">Home</a>
-                <a class="nav-project" href="project.html">My Project</a>
-            </ul>
+        <a id="contact-me" href="contact-me.html">Contact Me</a>
+    </nav>
+    <!-- end navbar -->
+    <h1>Add a project</h1>
 
-            <a id="contact-me" href="contact-me.html">Contact Me</a>
-        </nav>
-        <!-- end navbar -->
-        <h1>Add a project</h1>
-
-        <!-- Project Form -->
-        <div id="form-container">
-            <!-- form container -->
-            <form onsubmit="addProject(event)">
-                <div id="name-container">
-                    <label for="project-name" class="label">Project Name</label>
-                    <input type="text" id="project-name" class="form-input" />
-                </div>
-
-                <div id="date-container">
-                    <div>
-                        <label for="start-date">Start Date</label>
-                        <input type="date" id="start-date" class="form-input">
-                    </div>
-                    <div>
-                        <label for="end-date">End Date</label>
-                        <input type="date" id="end-date" class="form-input">
-                    </div>
-                </div>
-
-
-                <div id="description-container">
-                    <label for="description" class="label">Description</label>
-                    <textarea id="description" class="form-input"></textarea>
-                </div>
-                <label class="label">Languages & Technologies</label>
-                <div id="technologies-container">
-                    <ul id="technologies-list">
-                        <label class="technologies">
-                            <input id="javascript" value="javascript" type="checkbox">Javascript</i>
-                        </label>
-
-                        <label class="technologies">
-                            <input id="go" value="go" type="checkbox">Go</i>
-
-                        </label>
-                        <label class="technologies">
-                            <input id="python" value="python" type="checkbox">Python
-                        </label>
-
-
-
-                        <label class="technologies">
-                            <input id="c" value="c" type="checkbox">C
-                        </label>
-
-                        <label class="technologies">
-                            <input id="react" value="react" type="checkbox">React.js
-                        </label>
-
-                        <label class="technologies">
-                            <input id="postgresql" value="postgresql" type="checkbox">Postgresql
-                        </label>
-                    </ul>
-
-                </div>
-                <label class="label">Upload an image</label>
-                <div id="thumbnail-container">
-                    <input id="thumbnail" type="file"><i class="fa-solid fa-paperclip"></i>
-                </div>
-
-                <div>
-                    <button type="submit" id="add-project">Add</button>
-                </div>
-            </form>
-            <!-- end form container -->
-
-        </div>
-        <div id="projects-container">
-            <h1>My Project</h1>
-            <!-- dynamic content -->
-            <div id="projects-list">
+    <!-- Project Form -->
+    <div id="form-container">
+        <!-- form container -->
+        <form onsubmit="addProject(event)">
+            <div id="name-container">
+                <label for="project-name" class="label">Project Name</label>
+                <input type="text" id="project-name" class="form-input" />
             </div>
-    </body>
-    <script src="/assets/js/script.js"></script>
 
-</html>
+            <div id="date-container">
+                <div>
+                    <label for="start-date">Start Date</label>
+                    <input type="date" id="start-date" class="form-input">
+                </div>
+                <div>
+                    <label for="end-date">End Date</label>
+                    <input type="date" id="end-date" class="form-input">
+                </div>
+            </div>
+
+
+            <div id="description-container">
+                <label for="description" class="label">Description</label>
+                <textarea id="description" class="form-input"></textarea>
+            </div>
+            <label class="label">Languages & Technologies</label>
+            <div id="technologies-container">
+                <ul id="technologies-list">
+                    <label class="technologies">
+                        <input id="javascript" value="javascript" type="checkbox">Javascript
+                    </label>
+
+                    <label class="technologies">
+                        <input id="go" value="go" type="checkbox">Go
+
+                    </label>
+
+                    <label class="technologies">
+                        <input id="python" type="checkbox">Python
+                    </label>
+
+                    <label class="technologies">
+                        <input id="c" type="checkbox">C
+                    </label>
+
+                    <label class="technologies">
+                        <input id="react" type="checkbox">React.js
+                    </label>
+
+                    <label class="technologies">
+                        <input id="postgresql" type="checkbox">Postgresql
+                    </label>
+                </ul>
+
+            </div>
+            <label class="label">Upload an image</label>
+            <div id="thumbnail-container">
+                <input id="thumbnail" type="file"><i class="fa-solid fa-paperclip"></i>
+            </div>
+
+            <div>
+                <button id="add-project">Add</button>
+            </div>
+        </form>
+        <!-- end form container -->
+
+    </div>
+    <div id="projects-container">
+        <h1>My Project</h1>
+        <!-- dynamic content -->
+        <div id="projects-list">
+        </div>
 </body>
+<script src="/assets/js/script.js"></script>
 
 </html>
