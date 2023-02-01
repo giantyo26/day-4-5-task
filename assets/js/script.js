@@ -72,7 +72,6 @@ function addProject(e) {
             projectName,
             startDate,
             endDate,
-            // duration,
             description,
             technologies: {
                 javascript,
@@ -88,12 +87,12 @@ function addProject(e) {
         myProject.push(projectProperties);
 
         showProjects();
-        
-        
+
+
     }
 }
 
-// function to show list Myprojects
+// Function to render html 
 function showProjects() {
     let i = 0;
     for (i of myProject) {
@@ -102,24 +101,16 @@ function showProjects() {
         <div id="project-card">
                 <img src="${i.thumbnail}"/>
             <a id="project-title" href="/project-detail.html"><h2>${i.projectName}</h2></a>
-            <p id="project-duration">Duration: ${myProject[i.duration]} minggu</p>
+            <p id="project-duration">Duration: ${duration(i.startDate, i.endDate)}</p>
             <p id="project-description">${i.description}</p>
 
             <div id = "technologies-icon">
                 ${i.technologies.javascript ? `<i class="devicon-javascript-plain colored"></i>` : ""}
                 ${i.technologies.go ? `<i class="devicon-go-original-wordmark colored"></i>` : ""}
-                ${i.technologies.python ? `
-                
-            <i class="devicon-python-plain colored"></i>
-          
-              ` : ""}
+                ${i.technologies.python ? `<i class="devicon-python-plain colored"></i>` : ""}
                 ${i.technologies.c ? `<i class="devicon-c-plain-wordmark colored"></i>` : ""}
-                ${i.technologies.react ? `
-                <i class="devicon-react-original colored"></i>
-              ` : ""}
-                ${i.technologies.postgresql ? `
-                <i class="devicon-postgresql-plain colored"></i>
-              ` : ""}
+                ${i.technologies.react ? `<i class="devicon-react-original colored"></i>` : ""}
+                ${i.technologies.postgresql ? `<i class="devicon-postgresql-plain colored"></i>` : ""}
             </div>
             <div class:"project-option">
                 <button>edit</button>
@@ -130,43 +121,20 @@ function showProjects() {
     }
 }
 
+// Function to count the duration
+const duration = (startDate, endDate) => {
+    let difference = new Date(endDate) - new Date(startDate);
 
-// function createTime() {
-//     let years = time.getFullYear();
-//     let monthIndex = time.getMonth();
-//     let date = time.getDate();
-//     let hour = time.getHours();
-//     let minutes = time.getMinutes();
+    let day = Math.floor(difference / (1000 * 60 * 60 * 24));
+    let month = Math.floor(difference / (1000 * 60 * 60 * 24 * 30));
 
-//     const month = ["January", "February", "March", "April", "May", "June", "July", "August",
-//         "September", "October", "November", "December"];
-//     return `${date} ${month[monthIndex]} ${years} ${hour}:${minutes} `
-
-// }
-
-// const getDuration = (timePost) => {
-//     let timePosted = new Date(timePost)
-//     let timeNow = new Date()
-
-//     difference = (timeNow - timePosted);
-
-//     let monthDuration = Math.floor(difference / (30 * 24 * 60 * 60 * 1000));
-//     if (monthDuration > 0) {
-//         return `${monthDuration} month ago`
-//     } else {
-//         let weekDuration = Math.floor(difference / (30 * 24 * 60 * 60 * 1000))
-//         if (monthDuration < 0) {
-//             return `${weekDuratiom} week ago`
-//         } else {
-//             let hourDuration = Math.floor(difference / (30 * 24 * 60 * 60 * 1000))
-//             return `${hourDuration} jam lalu`
-//         } {
-
-//         }
-//     }
-
-// }
+    if (month > 0) {
+      return `${month} Bulan`;
+    } else {
+      return `${day} Hari`;
+    }
+  };
 
 
-// // setInterval()
+
 
