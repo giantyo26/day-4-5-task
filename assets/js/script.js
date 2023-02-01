@@ -124,14 +124,14 @@ function showProjects() {
 // Function to count the duration
 const duration = (startDate, endDate) => {
     let difference = new Date(endDate) - new Date(startDate);
-
-    let day = Math.floor(difference / (1000 * 60 * 60 * 24));
+    
     let month = Math.floor(difference / (1000 * 60 * 60 * 24 * 30));
-
+    let day = Math.floor(difference / (1000 * 60 * 60 * 24));
+    
     if (month > 0) {
-      return `${month} Bulan`;
+        return `${month} Bulan`;
     } else {
-      return `${day} Hari`;
+        return `${day} Hari`;
     }
   };
 
