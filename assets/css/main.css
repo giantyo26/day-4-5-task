@@ -20,7 +20,8 @@ body {
 
 
 .logo {
-    height: 35px;
+    width: 3.5em;
+    height: 2.5em;
     padding-right: 30px;
     padding-left: 10px;
     margin-left: 70px;
@@ -64,13 +65,13 @@ nav ul {
 
 /* content container */
 @media (min-width: 600px) {
-#container {
-    display: flex;
-    margin: 80px;
-    background-color: #fdfdfd;
-    box-shadow: 0 0 30px #dbdbdb;
-    border-radius: 10px;
-    gap: 20px;
+    #container {
+        display: flex;
+        margin: 80px;
+        background-color: #fdfdfd;
+        box-shadow: 0 0 30px #dbdbdb;
+        border-radius: 10px;
+        gap: 20px;
     }
 }
 
@@ -131,7 +132,7 @@ nav ul {
     box-shadow: 0 0 10px #dbdbdb;
     text-align: center;
     margin-bottom: auto;
-    
+
 }
 
 #photo {
@@ -198,6 +199,7 @@ label {
     padding: 5px 15px;
     background-color: #111727;
 }
+
 /* end contact-me page */
 
 /* my project page */
@@ -222,7 +224,7 @@ label {
 #technologies-cointainer {
     display: flex;
     padding-bottom: 30px;
-    
+
 }
 
 #technologies-list {
@@ -230,12 +232,13 @@ label {
     flex-wrap: wrap;
     padding-left: 0;
 }
+
 .technologies {
     display: flex;
     flex-basis: 33.3%;
     font-size: 2.5vh;
-    font-weight: 500;  
-    
+    font-weight: 500;
+
 }
 
 #thumbnail-container {
@@ -250,7 +253,7 @@ input::file-selector-button {
     font-weight: bold;
     color: #111727;
     padding: 10px;
-    border:  grey;
+    border: grey;
     border-radius: 3px;
     background-color: #e1e5e9;
 }
@@ -302,16 +305,16 @@ input::file-selector-button {
 }
 
 #project-card img {
-  border-radius: 10px;
-  height: 20em;
-  width: 100%;
+    border-radius: 10px;
+    height: 20em;
+    width: 100%;
 
 
 }
 
 #project-card a {
     text-decoration: none;
-    
+
 
 }
 
@@ -323,22 +326,17 @@ input::file-selector-button {
     margin-top: -1.8em;
     font-size: 0.8em;
     opacity: 90%;
-    
+
 }
 
 #project-description {
     margin-top: -0.5em;
-    
+
 
 }
 
 #technologies-icon {
     font-size: 2.5em;
-}
-
-#project-card > div:nth-child(2) {
-    display: flex;
-    justify-content: center;
 }
 
 #project-option .button {
@@ -352,21 +350,20 @@ input::file-selector-button {
 
 /* Project detail page */
 #project-details-page {
-    margin: 4em;
+    margin: 7em;
 }
+
 #project-details-container {
     display: flex;
-    margin: 4em;
+    gap: 3em;
 
-    
+
 }
 
-
- img {
+img {
     justify-content: flex-start;
     margin: 0;
     width: 50%;
 }
 
-#detail-right-side {
-}
+#detail-right-side {}
