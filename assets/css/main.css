@@ -15,7 +15,6 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
 
 
@@ -290,13 +289,13 @@ input::file-selector-button {
 #projects-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 2em;
     gap: 0.5em;
 }
 
 #project-card {
-    justify-content: flex-start;
+    justify-content: space-between;
     box-shadow: 0 5px 15px 0 #dbdbdb;
     border-radius: 10px;
     padding: 2em;
@@ -314,7 +313,6 @@ input::file-selector-button {
 
 #project-card a {
     text-decoration: none;
-
 
 }
 
@@ -336,16 +334,26 @@ input::file-selector-button {
 }
 
 #technologies-icon {
-    font-size: 2.5em;
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5em;
+    font-size: 2em;
+    padding-bottom: 0.3em;
 }
 
-#project-option .button {
+#project-option {
+    display: flex;
     background-color: #030e12;
     color: white;
     width: 100%;
     text-align: center;
     border-radius: 10px;
 
+}
+
+.project-option button {
+    display: flex;
+    background-color: #030e12;
 }
 
 /* Project detail page */
@@ -355,11 +363,21 @@ input::file-selector-button {
 
 #project-details-container {
     display: flex;
-    gap: 3em;
+    gap: 2em;
+}
 
+.project-detail-title {
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+#project-detail-info {
 
 }
 
+#project-detail-icon {
+    display: flex;
+}
 img {
     justify-content: flex-start;
     margin: 0;

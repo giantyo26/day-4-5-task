@@ -94,7 +94,7 @@ function addProject(e) {
 
 // Function to render html 
 function showProjects() {
-    let i = 0;
+    document.getElementById("projects-list").innerHTML = ""
     for (i of myProject) {
         document.getElementById("projects-list").innerHTML += `
         <a href="project-detail.html">
@@ -112,7 +112,7 @@ function showProjects() {
                 ${i.technologies.react ? `<i class="devicon-react-original colored"></i>` : ""}
                 ${i.technologies.postgresql ? `<i class="devicon-postgresql-plain colored"></i>` : ""}
             </div>
-            <div class:"project-option">
+            <div id:"project-option" >
                 <button>edit</button>
                 <button>delete</button>
             </div>
@@ -124,16 +124,16 @@ function showProjects() {
 // Function to count the duration
 const duration = (startDate, endDate) => {
     let difference = new Date(endDate) - new Date(startDate);
-    
+
     let month = Math.floor(difference / (1000 * 60 * 60 * 24 * 30));
     let day = Math.floor(difference / (1000 * 60 * 60 * 24));
-    
+
     if (month > 0) {
         return `${month} Bulan`;
     } else {
         return `${day} Hari`;
     }
-  };
+};
 
 
 
