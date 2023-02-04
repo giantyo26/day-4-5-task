@@ -8,7 +8,6 @@ body {
 }
 
 /* navigation bar */
-
 .nav-bar {
     display: flex;
     background-color: #f4f3f3;
@@ -16,7 +15,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 
 .logo {
     width: 3.5em;
@@ -131,7 +129,6 @@ nav ul {
     box-shadow: 0 0 10px #dbdbdb;
     text-align: center;
     margin-bottom: auto;
-
 }
 
 #photo {
@@ -173,7 +170,6 @@ h1 {
 label {
     font-weight: 600;
 }
-
 
 #message {
     width: 100%;
@@ -223,7 +219,6 @@ label {
 #technologies-cointainer {
     display: flex;
     padding-bottom: 30px;
-
 }
 
 #technologies-list {
@@ -237,7 +232,6 @@ label {
     flex-basis: 33.3%;
     font-size: 2.5vh;
     font-weight: 500;
-
 }
 
 #thumbnail-container {
@@ -307,8 +301,6 @@ input::file-selector-button {
     border-radius: 10px;
     height: 20em;
     width: 100%;
-
-
 }
 
 #project-card a {
@@ -324,13 +316,10 @@ input::file-selector-button {
     margin-top: -1.8em;
     font-size: 0.8em;
     opacity: 90%;
-
 }
 
 #project-description {
     margin-top: -0.5em;
-
-
 }
 
 #technologies-icon {
@@ -359,8 +348,6 @@ input::file-selector-button {
     width: 100%;
     border-radius: 0.5em;
     cursor: pointer;
-    
-    
 }
 
 /* Project detail page */
@@ -371,8 +358,6 @@ input::file-selector-button {
 #project-details-page h1 {
     margin-top: -2em;
 }
-
-
 
 #project-details-container {
     display: flex;
@@ -394,7 +379,4 @@ input::file-selector-button {
     display: grid;
     gap: 1em;
     grid-template-columns: repeat(2, 0.5fr);
-
-  
 }
-
