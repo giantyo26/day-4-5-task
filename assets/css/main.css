@@ -1,5 +1,5 @@
 body {
-    font-family: "Poppins", "Open Sans";
+    font-family: Poppins, "Open Sans";
     font-size: 15px;
     font-weight: 400px;
     background-color: #e1e5e9;
@@ -204,7 +204,7 @@ label {
 /* my project page */
 #date-container {
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
 #description {
@@ -337,23 +337,30 @@ input::file-selector-button {
     display: flex;
     justify-content: flex-start;
     gap: 0.5em;
-    font-size: 2em;
+    font-size: 1.75em;
     padding-bottom: 0.3em;
 }
 
 #project-option {
     display: flex;
-    background-color: #030e12;
-    color: white;
-    width: 100%;
+    gap: 1.5em;
     text-align: center;
-    border-radius: 10px;
 
 }
 
-.project-option button {
-    display: flex;
-    background-color: #030e12;
+#project-option button {
+    font-size: 1em;
+    font-weight: 550;
+    background-color: #111727;
+    color: #EEEDED;
+    margin-top: 0.75em;
+    padding: 0.3em 0;
+    border: 0;
+    width: 100%;
+    border-radius: 0.5em;
+    cursor: pointer;
+    
+    
 }
 
 /* Project detail page */
@@ -361,27 +368,33 @@ input::file-selector-button {
     margin: 7em;
 }
 
+#project-details-page h1 {
+    margin-top: -2em;
+}
+
+
+
 #project-details-container {
     display: flex;
     gap: 2em;
 }
 
+#project-details-container img {
+    width: 60%;
+    margin: 1em 3em 1em 0;
+}
+
 .project-detail-title {
+    margin-top: 0.5em;
     font-weight: 500;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
-#project-detail-info {
+.project-detail-technologies {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(2, 0.5fr);
 
+  
 }
 
-#project-detail-icon {
-    display: flex;
-}
-img {
-    justify-content: flex-start;
-    margin: 0;
-    width: 50%;
-}
-
-#detail-right-side {}

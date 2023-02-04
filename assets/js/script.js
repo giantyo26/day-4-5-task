@@ -105,14 +105,14 @@ function showProjects() {
             <p id="project-description">${i.description}</p>
 
             <div id = "technologies-icon">
-                ${i.technologies.javascript ? `<i class="devicon-javascript-plain colored"></i>` : ""}
-                ${i.technologies.go ? `<i class="devicon-go-original-wordmark colored"></i>` : ""}
-                ${i.technologies.python ? `<i class="devicon-python-plain colored"></i>` : ""}
-                ${i.technologies.c ? `<i class="devicon-c-plain-wordmark colored"></i>` : ""}
-                ${i.technologies.react ? `<i class="devicon-react-original colored"></i>` : ""}
-                ${i.technologies.postgresql ? `<i class="devicon-postgresql-plain colored"></i>` : ""}
+                ${i.technologies.javascript ? `<i class="devicon-javascript-plain"></i>` : ""}
+                ${i.technologies.go ? `<i class="devicon-go-original-wordmark"></i>` : ""}
+                ${i.technologies.python ? `<i class="devicon-python-plain"></i>` : ""}
+                ${i.technologies.c ? `<i class="devicon-c-plain-wordmark"></i>` : ""}
+                ${i.technologies.react ? `<i class="devicon-react-original"></i>` : ""}
+                ${i.technologies.postgresql ? `<i class="devicon-postgresql-plain"></i>` : ""}
             </div>
-            <div id:"project-option" >
+            <div id="project-option">
                 <button>edit</button>
                 <button>delete</button>
             </div>
