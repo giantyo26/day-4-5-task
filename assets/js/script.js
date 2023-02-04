@@ -65,9 +65,6 @@ function addProject(e) {
         // Convert image to blob object
         thumbnail = URL.createObjectURL(thumbnail[0]);
 
-        // Duration (endDate - startDate)
-        // let duration = ;
-
         let projectProperties = {
             projectName,
             startDate,
@@ -85,12 +82,14 @@ function addProject(e) {
         };
 
         myProject.push(projectProperties);
-
         showProjects();
-
-
+        // Form reset
+        document.getElementById("project-form").reset()
+        }
+    
     }
-}
+  
+    
 
 // Function to render html 
 function showProjects() {
@@ -116,6 +115,8 @@ function showProjects() {
                 <button>edit</button>
                 <button>delete</button>
             </div>
+            <div id="posted-time">
+            <div>
         </div>
         `;
     }
@@ -134,6 +135,7 @@ const duration = (startDate, endDate) => {
         return `${day} Hari`;
     }
 };
+
 
 
 
