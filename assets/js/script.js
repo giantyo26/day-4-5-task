@@ -48,7 +48,7 @@ function addProject(e) {
     let postgresql = document.getElementById("postgresql").checked;
     let thumbnail = document.getElementById("thumbnail").files;
 
-    // Conditional alert if any the field is empty
+    // Conditional alert if any of the field is empty
     if (projectName == "") {
         alert("Please input the project name!");
     } else if (startDate == "") {
@@ -57,7 +57,7 @@ function addProject(e) {
         alert("Input the end date of your project!");
     } else if (description == "") {
         alert("Fill out the project description!");
-    } else if (!javascript && !python && !go && !react && !postgresql) {
+    } else if (!javascript && !python && !go && !c && !react && !postgresql) {
         alert("Check the technologies you use for the project!");
     } else if (thumbnail.length == 0) {
         alert("Upload the thumbnail")
@@ -85,11 +85,11 @@ function addProject(e) {
         showProjects();
         // Form reset
         document.getElementById("project-form").reset()
-        }
-    
     }
-  
-    
+
+}
+
+
 
 // Function to render html 
 function showProjects() {
@@ -115,7 +115,6 @@ function showProjects() {
                 <button>edit</button>
                 <button>delete</button>
             </div>
-            <div id="posted-time">
             <div>
         </div>
         `;
@@ -127,14 +126,19 @@ const duration = (startDate, endDate) => {
     let difference = new Date(endDate) - new Date(startDate);
 
     let month = Math.floor(difference / (1000 * 60 * 60 * 24 * 30));
+    let week = Math.floor(difference / (1000 * 60 * 60 * 24 * 7))
     let day = Math.floor(difference / (1000 * 60 * 60 * 24));
 
     if (month > 0) {
         return `${month} Bulan`;
-    } else {
+    } else if (week > 0) {
+        return `${week} Minggu`;
+    } else if (day > 0) {
         return `${day} Hari`;
+    } else {
+        return `Within a day`;
     }
-};
+}
 
 
 
