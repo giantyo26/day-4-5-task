@@ -1,15 +1,23 @@
-body {
+* {
+    text-decoration: none;
+    list-style-type: none;
     font-family: Poppins, "Open Sans";
+}
+    
+body {
+    background-color: #e1e5e9;
+    color: black; 
+    box-sizing: border-box;
     font-size: 15px;
     font-weight: 400px;
-    background-color: #e1e5e9;
-    color: black;
     margin: 0px;
+
 }
 
 /* navigation bar */
 .nav-bar {
     display: flex;
+    justify-content: space-between;
     background-color: #f4f3f3;
     box-sizing: border-box;
     margin: 0;
@@ -20,36 +28,35 @@ body {
     width: 3.5em;
     height: 2.5em;
     padding-right: 30px;
-    padding-left: 10px;
-    margin-left: 70px;
-    margin-top: 17px;
-}
-
-nav ul {
-    margin-top: 21px;
+    padding-left: 87px;
+    margin-top: 0.75em;
 }
 
 .nav-home {
-    text-decoration: none;
-    font-weight: bold;
     color: #111727;
-    margin-right: 20px;
-    margin-left: -17px;
+    padding-right: 20px;
+    padding-left: -10px;
+}
+
+.nav-home:hover {
+    font-weight: bold;
 }
 
 .nav-project {
-    text-decoration: none;
-    padding: 20px;
+    padding-left: 20px;
     color: #111727;
 }
 
+.nav-project:hover {
+    font-weight: bold;
+}
+
 #contact-me {
-    text-decoration: none;
+    text-align: center;
     font-size: 15px;
     margin-left: auto;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-right: 79px;
-    margin-bottom: 16px;
     border-radius: 10px;
     color: #F5F5F5;
     padding: 5px 15px;
@@ -61,10 +68,16 @@ nav ul {
 /* end navigation bar */
 
 /* content container */
+#container {
+    padding: 4em 3em;
+    background-color: #fdfdfd;
+    box-shadow: 0 0 30px #dbdbdb;
+}
+
 @media (min-width: 600px) {
     #container {
         display: flex;
-        margin: 80px;
+        margin: 4em 5.5em;
         background-color: #fdfdfd;
         box-shadow: 0 0 30px #dbdbdb;
         border-radius: 10px;
@@ -73,7 +86,7 @@ nav ul {
 }
 
 #container {
-    padding: 40px;
+    padding: 50px;
 }
 
 #left-side {
@@ -84,6 +97,11 @@ nav ul {
 
 #heading {
     text-align: left;
+    font-size: 2em;
+}
+
+#paragraph {
+    font-size: 1.1em;
 }
 
 #contact-download {
@@ -94,15 +112,17 @@ nav ul {
 }
 
 #contact {
+    font-size: 1.1em;
     padding: 5px 20px 8px;
     background-color: #111727;
     border-radius: 45px;
     color: white;
-    text-decoration: none;
-    margin-top: 11px;
+    margin-top: 12px;
+    height: fit-content;
 }
 
 #download {
+    font-size: 1.25em;
     margin-top: 30px;
 }
 
@@ -114,7 +134,6 @@ nav ul {
 }
 
 .icons {
-    text-decoration: none;
     color: black;
     margin: 10px
 }
@@ -125,6 +144,7 @@ nav ul {
 }
 
 #card {
+    width: 300px;
     border-radius: 20px;
     box-shadow: 0 0 10px #dbdbdb;
     text-align: center;
@@ -132,8 +152,8 @@ nav ul {
 }
 
 #photo {
-    width: 350px;
-    height: 400px;
+    height: auto;
+    max-width: 100%;
     border-radius: 20px 20px 0 0;
 }
 
@@ -230,7 +250,6 @@ label {
 .technologies {
     display: flex;
     flex-basis: 33.3%;
-    font-size: 2.5vh;
     font-weight: 500;
 }
 
@@ -253,7 +272,7 @@ input::file-selector-button {
 
 .fa-paperclip {
     float: right;
-    padding-right: 8px;
+    padding-right: 5px;
     padding-top: 8px;
     font-size: 20px;
 }
@@ -279,7 +298,6 @@ input::file-selector-button {
     margin-bottom: auto;
 }
 
-
 #projects-list {
     display: flex;
     flex-wrap: wrap;
@@ -289,7 +307,6 @@ input::file-selector-button {
 }
 
 #project-card {
-    justify-content: space-between;
     box-shadow: 0 5px 15px 0 #dbdbdb;
     border-radius: 10px;
     padding: 2em;
@@ -301,10 +318,6 @@ input::file-selector-button {
     border-radius: 9px;
     height: 20em;
     width: 100%;
-}
-
-#project-card a {
-    text-decoration: none;
 }
 
 #project-title {
@@ -330,7 +343,7 @@ input::file-selector-button {
 
 #technologies-icon {
     display: flex;
-    justify-content: flex-start;
+    flex-wrap: wrap;
     gap: 0.5em;
     font-size: 1.75em;
     padding-bottom: 0.3em;
@@ -338,7 +351,7 @@ input::file-selector-button {
 
 #project-option {
     display: flex;
-    gap: 1.5em;
+    gap: 1em;
     text-align: center;
 }
 

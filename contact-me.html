@@ -26,7 +26,7 @@
     <!-- contact form -->
     <div id="form-container">
         <!-- form container -->
-        <form id="contact-form">
+        <form id="contact-form" onsubmit="getData(event)">
             <div>
                 <label for="name" class="label">Name</label>
                 <input type="text" id="name" class="form-input" />
@@ -45,6 +45,7 @@
             <div>
                 <label for="subject" class="label">Subject</label>
                 <select id="subject" class="form-input">
+                    <option selected disabled>Select your inquiries</option>
                     <option>Let's connect</option>
                     <option>Let's collaborate</option>
                     <option>I have a question</option>
@@ -57,13 +58,13 @@
                 <textarea id="message" class="form-input"></textarea>
             </div>
             <div>
-                <button type="button" onclick="getData()" id="submit">Submit</button>
+                <button id="submit">Submit</button>
             </div>
         </form>
         <!-- end form container -->
     </div>
     <!-- end contact form -->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/contact-form.js"></script>
 </body>
 
 </html>
