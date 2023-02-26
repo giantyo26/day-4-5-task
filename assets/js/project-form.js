@@ -1,7 +1,7 @@
 // Global array
 const myProject = [];
 
-// function returns an element with a specified value
+// function to returns an element with a specified id
 let id = (id) => document.getElementById(id);
 
 // Add project function
