@@ -1,22 +1,25 @@
 // Global array
 const myProject = [];
 
+// function returns an element with a specified value
+let id = (id) => document.getElementById(id);
+
 // Add project function
 function addProject(e) {
     e.preventDefault()
 
     // Get DOM value from form and initialized it to a variable
-    let projectName = document.getElementById("project-name").value;
-    let startDate = document.getElementById('start-date').value;
-    let endDate = document.getElementById("end-date").value;
-    let description = document.getElementById("description").value;
-    let thumbnail = document.getElementById("thumbnail").files;
+    let projectName = id("project-name").value;
+    let startDate = id('start-date').value;
+    let endDate = id("end-date").value;
+    let description = id("description").value;
+    let thumbnail = id("thumbnail").files;
    
     // Get every checkbox value (boolean) and insert it to an array
     const technologies = ["javascript", "python", "c", "go", "react", "postgresql"]
     const technologiesVal = []
     for (let i = 0; i < technologies.length; i++) {
-        technologiesVal.push(document.getElementById(technologies[i]).checked);
+        technologiesVal.push(id(technologies[i]).checked);
     }
 
     // Conditional alert if any of the field is empty
@@ -53,15 +56,15 @@ function addProject(e) {
         showProjects();
 
         // Form reset
-        document.getElementById("project-form").reset()
+        id("project-form").reset()
     }
 }
 
 // Function to render projects card 
 function showProjects() {
-    document.getElementById("projects-list").innerHTML = ""
+    id("projects-list").innerHTML = ""
     for (let element of myProject) {
-        document.getElementById("projects-list").innerHTML += `
+        id("projects-list").innerHTML += `
         <a href="project-detail.html">
         <div id="project-card">
             <img src="${element.thumbnail}"/>

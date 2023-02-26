@@ -23,7 +23,7 @@ function getData(e) {
         const defaultEmail = "giantyoard@gmail.com";
 
         let mailTo = document.createElement("a");
-        mailTo.href = `mailto:${defaultEmail}?subject=${subject}&body= Hello, my name is ${name}, ${message}, you can contact me on this number:${phone}`;
+        mailTo.href = `mailto:${defaultEmail}?subject=${subject}&body= Hello, my name is ${name}, ${message}, you can contact me on this number: ${phone}`;
         mailTo.click();
 
         // Form reset
