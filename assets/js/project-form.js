@@ -1,20 +1,20 @@
 // Global array
 const myProject = [];
 
-// function to returns an element with a specified id
+// Function to returns an element with a specified id
 let id = (id) => document.getElementById(id);
 
 // Add project function
 function addProject(e) {
     e.preventDefault()
 
-    // Get DOM value from form and initialized it to a variable
+    // Get value from form
     let projectName = id("project-name").value;
     let startDate = id('start-date').value;
     let endDate = id("end-date").value;
     let description = id("description").value;
     let thumbnail = id("thumbnail").files;
-   
+
     // Get every checkbox value (boolean) and insert it to an array
     const technologies = ["javascript", "python", "c", "go", "react", "postgresql"]
     const technologiesVal = []
@@ -39,7 +39,6 @@ function addProject(e) {
         // Creates a string containing a URL to blob object
         thumbnail = URL.createObjectURL(thumbnail[0])
 
-        // Assign variables (inputted value) to an object
         const projectProperties = {
             projectName,
             startDate,
@@ -48,14 +47,9 @@ function addProject(e) {
             technologiesVal,
             thumbnail,
         }
-
-        // Add projectProperties properties to myProject array
         myProject.push(projectProperties);
 
-        // Call showProject function
         showProjects();
-
-        // Form reset
         id("project-form").reset()
     }
 }
@@ -75,9 +69,9 @@ function showProjects() {
 
             <div id = "technologies-icon">
                 ${element.technologiesVal[0] ? `<i class="devicon-javascript-plain"></i>` : ""}
-                ${element.technologiesVal[1] ? `<i class="devicon-go-original-wordmark"></i>` : ""}
-                ${element.technologiesVal[2] ? `<i class="devicon-python-plain"></i>` : ""}
-                ${element.technologiesVal[3] ? `<i class="devicon-c-plain-wordmark"></i>` : ""}
+                ${element.technologiesVal[1] ? `<i class="devicon-python-plain"></i>` : ""}
+                ${element.technologiesVal[2] ? `<i class="devicon-c-plain-wordmark"></i>` : ""}
+                ${element.technologiesVal[3] ? `<i class="devicon-go-original-wordmark"></i>` : ""}
                 ${element.technologiesVal[4] ? `<i class="devicon-react-original"></i>` : ""}
                 ${element.technologiesVal[5] ? `<i class="devicon-postgresql-plain"></i>` : ""}
             </div>
@@ -94,7 +88,7 @@ function showProjects() {
 // Function to count the duration
 const getDuration = (startDate, endDate) => {
     let difference = new Date(endDate) - new Date(startDate);
-
+    
     let month = Math.floor(difference / (1000 * 60 * 60 * 24 * 30));
     let week = Math.floor(difference / (1000 * 60 * 60 * 24 * 7))
     let day = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -112,55 +106,6 @@ const getDuration = (startDate, endDate) => {
             return `Within a day`;
     }
 }
-
-// const getTimePosted = (timePosted) => {
-//     let difference = new Date() - timePosted
-    
-//     const monthsDifference = Math.floor(difference / (1000 * 60 * 60 * 24 * 30));
-//     const weeksDifference = Math.floor(difference / (1000 * 60 * 60 * 24 * 7));
-//     const daysDifference = Math.floor(difference / (1000 * 60 * 60 * 24));
-//     const hoursDifference = Math.floor(difference / (1000 * 60 * 60));
-//     const minutesDifference = Math.floor(difference / (1000 * 60))
-//     const secondsDifference = Math.floor(difference / (1000));
-
-//     switch (true) {
-//         case monthsDifference > 1:
-//             return `${monthsDifference} months ago`
-//         case monthsDifference > 0:
-//             return `${monthsDifference} month ago`
-
-//         case weeksDifference > 1:
-//             return `${daysDifference} weeks ago`
-//         case weeksDifference > 0:
-//             return `${weeksDifference} week ago`
-
-//         case daysDifference > 1:
-//             return `${monthsDifference} days ago`
-//         case daysDifference == 1:
-//             return `${daysDifference} day ago`
-
-//         case hoursDifference > 1:
-//             return `${hoursDifference} hours ago`
-//         case hoursDifference > 0:
-//             return `${hoursDifference} hour ago`
-
-//         case minutesDifference > 1:
-//             return `${minutesDifference} minutes ago`
-//         case minutesDifference == 1:
-//             return `${minutesDifference} minute ago`
-
-//         case secondsDifference > 1:
-//             return `${secondsDifference} seconds ago`
-//         case secondsDifference == 1:
-//             return `${secondsDifference} second ago`
-//         default:
-//             return `just now`
-//     }
-// }
-
-// setInterval(showProjects, 1000)
-
-
 
 
 
