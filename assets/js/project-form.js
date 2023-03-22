@@ -2,18 +2,18 @@
 const myProject = [];
 
 // Function to returns an element with a specified id
-let id = (id) => document.getElementById(id);
+let getId = (id) => document.getElementById(id);
 
 // Add project function
 function addProject(e) {
     e.preventDefault()
 
     // Get value from form
-    let projectName = id("project-name").value;
-    let startDate = id('start-date').value;
-    let endDate = id("end-date").value;
-    let description = id("description").value;
-    let thumbnail = id("thumbnail").files;
+    let projectName = getId("project-name").value;
+    let startDate = getId('start-date').value;
+    let endDate = getId("end-date").value;
+    let description = getId("description").value;
+    let thumbnail = getId("thumbnail").files;
 
     // Get every checkbox value (boolean) and insert it to an array
     const technologies = ["javascript", "python", "c", "go", "react", "postgresql"]
@@ -50,7 +50,7 @@ function addProject(e) {
         myProject.push(projectProperties);
 
         showProjects();
-        id("project-form").reset()
+        getId("project-form").reset()
     }
 }
 
